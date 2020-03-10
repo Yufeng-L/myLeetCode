@@ -13,7 +13,5 @@ class Solution:
                     res[i] = res[i] + candies
                     return res
 
-                count += 1
-        
+                count += 1      
         return res
-
