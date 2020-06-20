@@ -85,6 +85,9 @@ class Solution:
                 stack.append(node.right)
         return res[::-1]
 
+#树遍历颜色标记参考：
+https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/
+
 
 
 
