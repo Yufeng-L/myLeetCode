@@ -11,7 +11,10 @@ class Solution:
         prev = None
         cur = head
         while cur:
-            cur.next, prev, cur = prev, cur, cur.next
+            tmp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = tmp
         return prev
         # 递归
         # if head  == None or head.next == None:
