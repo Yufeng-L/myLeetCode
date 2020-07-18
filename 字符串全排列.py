@@ -17,3 +17,15 @@ class Solution:
         dfs(0)
         return res
 
+class Solution:
+    def permutation(self, s: str) -> List[str]:
+        def helper(tmp ,s):
+            if not s:
+                res.append(''.join(tmp))
+            for i,c in enumerate(s):
+                helper(tmp+[c], s[:i]+s[i+1:])
+        res = []
+        charlist = list(s)
+        helper([], charlist)
+        return list(set(res))
+
