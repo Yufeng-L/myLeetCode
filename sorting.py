@@ -1,35 +1,25 @@
-#Bubble Sort 冒泡排序
+#Bubble Sort 冒泡排序(稳定)
 def bubble(arr):
 	n = len(arr)
-	for i in range(n):
-		already_sorted = True
+	for i in range(n-1):
 		for j in range(n-i-1):
 			if arr[j] > arr[j+1]:
 				arr[j],arr[j+1] = arr[j+1],arr[j]
 				already_sorted = False
-		if already_sorted:
-			break
 	return arr
 
-
-#Insertion Sort 插入排序
+#Insertion Sort 插入排序(稳定)
 def insertion(arr):
-
 	for i in range(1,len(arr)):
 		key_item = arr[i]
-
 		j = i - 1
-
 		while j >= 0 and arr[j] > key_item:
 			arr[j+1] = arr[j]
-
 			j -= 1
 		arr[j+1] = key_item
-
-
 	return arr
 
-#Merge Sort 合并排序
+#Merge Sort 合并排序(稳定)
 def merge(left,right):
 
 	if len(left) == 0:
@@ -68,7 +58,7 @@ def merge_sort(arr):
 	return merge(left=merge_sort(arr[:midpoint]),\
 		right=merge_sort(arr[midpoint:]))
 
-#quicksort 快排
+#quicksort 快排(不稳定)
 from random import randint
 def quicksort(arr):
 	if len(arr) < 2:
@@ -90,7 +80,7 @@ def quicksort(arr):
 	return quicksort(low) + same + quicksort(high)
 
 
-test = [1,3,5,2,9,4,1]
+test = [1,3,5,2,9,4,1,6,4]
 print(bubble(test))
 print(insertion(test))
 print(merge_sort(test))
