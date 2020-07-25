@@ -16,6 +16,7 @@ def insertion(arr):
 		while j >= 0 and arr[j] > key:
 			arr[j+1] = arr[j]
 			j -= 1
+		#到这一步如果进了while后 j肯定为-1 arr[j+1]实为a[0] 
 		arr[j+1] = key
 	return arr
 
@@ -80,8 +81,8 @@ def quicksort(arr):
 	return quicksort(low) + same + quicksort(high)
 
 
-test = [1,3,5,2,9,4,1,6,4]
-print(bubble(test))
+test = [12,11,13,5,6]
+# print(bubble(test))
 print(insertion(test))
-print(merge_sort(test))
-print(quicksort(test))
+# print(merge_sort(test))
+# print(quicksort(test))
