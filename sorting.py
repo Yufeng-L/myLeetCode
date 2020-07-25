@@ -16,7 +16,6 @@ def insertion(arr):
 		while j >= 0 and key < arr[j]:
 			arr[j+1] = arr[j]
 			j -= 1
-		#到这一步如果进了while后 j肯定为-1 arr[j+1]实为a[0] 
 		arr[j+1] = key
 	return arr
 
