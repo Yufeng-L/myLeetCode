@@ -19,6 +19,16 @@ def insertion(arr):
 		arr[j+1] = key
 	return arr
 
+#Selection Sort 选择排序(不稳定)
+def selection(arr):
+	for i in range(len(arr)):
+		min_index = i
+		for j in range(i+1,len(arr)):
+			if arr[min_index] > arr[j]:
+				min_index = j
+		arr[min_index], arr[i] = arr[i], arr[min_index]
+	return arr
+
 #Merge Sort 合并排序(稳定)
 def merge(left,right):
 
@@ -83,5 +93,6 @@ def quicksort(arr):
 test = [12,11,13,5,6]
 # print(bubble(test))
 print(insertion(test))
+print(selection(test))
 # print(merge_sort(test))
 # print(quicksort(test))
